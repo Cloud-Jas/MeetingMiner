@@ -1,0 +1,49 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "inputs": {
+      "x": 12,
+      "y": 62,
+      "index": -1
+    },
+    "outputs": {
+      "x": 12,
+      "y": 612,
+      "index": -1
+    },
+    "langchain_summarization": {
+      "x": 12,
+      "y": 392,
+      "height": 75,
+      "index": 0
+    },
+    "get_blob_content": {
+      "x": 12,
+      "y": 172,
+      "height": 75,
+      "index": 1
+    },
+    "generate_chunks": {
+      "x": 12,
+      "y": 282,
+      "height": 75,
+      "index": 2
+    },
+    "user_story_generator": {
+      "x": 12,
+      "y": 502,
+      "height": 75,
+      "index": 3
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      1,
+      0,
+      0,
+      1,
+      204.21663419448538,
+      -46.90168080468936
+    ]
+  }
+}

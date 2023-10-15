@@ -1,0 +1,80 @@
+{
+  "package": {},
+  "code": {
+    "echo.py": {
+      "name": "echo.py",
+      "type": "python",
+      "inputs": {
+        "blob_names": {
+          "type": [
+            "list"
+          ],
+          "value": "${inputs.blob}"
+        },
+        "conn": {
+          "type": [
+            "CustomConnection"
+          ],
+          "value": "blob-connection"
+        }
+      },
+      "source": "echo.py",
+      "function": "get_blob_content",
+      "is_builtin": false,
+      "toolId": "echo.py"
+    },
+    "generate_chunks.py": {
+      "name": "generate_chunks.py",
+      "type": "python",
+      "inputs": {
+        "content": {
+          "type": [
+            "string"
+          ],
+          "value": "${get_blob_content.output}"
+        }
+      },
+      "source": "generate_chunks.py",
+      "function": "generate_chunks",
+      "is_builtin": false,
+      "toolId": "generate_chunks.py"
+    },
+    "langchain_summarization.py": {
+      "name": "langchain_summarization.py",
+      "type": "python",
+      "inputs": {
+        "azure_open_ai_connection": {
+          "type": [
+            "AzureOpenAIConnection"
+          ],
+          "value": "openai-integrations"
+        },
+        "chunks": {
+          "type": [
+            "object"
+          ],
+          "value": "${generate_chunks.output}"
+        }
+      },
+      "source": "langchain_summarization.py",
+      "function": "langchain_summarization",
+      "is_builtin": false,
+      "toolId": "langchain_summarization.py"
+    },
+    "summarization_prompt.jinja2": {
+      "name": "summarization_prompt.jinja2",
+      "type": "prompt",
+      "inputs": {
+        "text": {
+          "type": [
+            "string"
+          ],
+          "value": "${langchain_summarization.output}"
+        }
+      },
+      "source": "summarization_prompt.jinja2",
+      "is_builtin": false,
+      "toolId": "summarization_prompt.jinja2"
+    }
+  }
+}

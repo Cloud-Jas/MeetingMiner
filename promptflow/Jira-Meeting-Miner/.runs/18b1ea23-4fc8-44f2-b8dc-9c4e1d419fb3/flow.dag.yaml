@@ -1,0 +1,63 @@
+inputs:
+  topic:
+    type: string
+    is_chat_input: false
+  blob:
+    type: string
+    default: transcript-1.txt
+    is_chat_input: false
+outputs:
+  stories:
+    type: string
+    reference: ${user_story_generator.output}
+    evaluation_only: false
+    is_chat_output: false
+nodes:
+- name: langchain_summarization
+  type: python
+  source:
+    type: code
+    path: langchain_summarization.py
+  inputs:
+    azure_open_ai_connection: openai-integrations
+    chunks: ${generate_chunks.output}
+  aggregation: false
+- name: get_blob_content
+  type: python
+  source:
+    type: code
+    path: echo.py
+  inputs:
+    blob_name: ${inputs.blob}
+    conn: blob-connection
+  aggregation: false
+- name: generate_chunks
+  type: python
+  source:
+    type: code
+    path: generate_chunks.py
+  inputs:
+    content: ${get_blob_content.output}
+  aggregation: false
+- name: user_story_generator
+  type: llm
+  source:
+    type: code
+    path: summarization_prompt.jinja2
+  inputs:
+    deployment_name: ChatGPT-OpenAI
+    temperature: 0.3
+    top_p: 1
+    stop: ""
+    max_tokens: 0
+    presence_penalty: 0
+    frequency_penalty: 0
+    logit_bias: ""
+    text: ${langchain_summarization.output}
+  api: chat
+  provider: AzureOpenAI
+  connection: openai-integrations
+  module: promptflow.tools.aoai
+  aggregation: false
+environment:
+  python_requirements_txt: requirements.txt
