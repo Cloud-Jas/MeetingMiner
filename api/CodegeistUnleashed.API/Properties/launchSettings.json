@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "CodegeistUnleashed.API": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7292"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 33780,
+      "useSSL": false
+    }
+  }
+}

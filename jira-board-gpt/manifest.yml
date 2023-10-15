@@ -1,0 +1,27 @@
+modules:
+  webtrigger:
+    - key: openAI-listener
+      function: openAIListener
+  jira:issuePanel:
+    - key: Meeting-miner-GPT
+      function: main      
+      title: Meeting miner
+      icon: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dli7j6oc6m59hek235w9.png
+  function:
+    - key: openAIListener
+      handler: index.listener
+    - key: main
+      handler: index.run
+app:
+  id: ari:cloud:ecosystem::app/1225c326-d5f6-41a4-9c11-9025f1cfdd2e
+  name: MeeetingMiner
+permissions:
+  external:
+    fetch:
+      backend:
+        - 'https://func-codegeistunleased.azurewebsites.net/api/FxUploadToBlob'
+        - 'https://func-codegeistunleased.azurewebsites.net/api/FxPushMessageToQueue'
+  scopes:
+    - read:jira-work    
+    - write:jira-work  
+    - read:attachment:jira  
