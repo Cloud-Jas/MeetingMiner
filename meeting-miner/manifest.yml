@@ -13,7 +13,7 @@ modules:
     - key: main
       handler: index.run
 app:
-  id: ari:cloud:ecosystem::app/1225c326-d5f6-41a4-9c11-9025f1cfdd2e
+  id: ari:cloud:ecosystem::app/468541e9-6987-4ecd-8471-59ed8b1a04f0
   name: MeeetingMiner
 permissions:
   external:

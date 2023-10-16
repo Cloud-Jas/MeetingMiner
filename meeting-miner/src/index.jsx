@@ -238,7 +238,7 @@ async function pushMessageToQueue(requestBody) {
   return (
     <Fragment>            
       <Text>
-        Choose meeting transcripts:
+      {attachments.length > 0 ? "Choose meeting transcripts:" : "No attachments found"}
       </Text>
       {attachments.map((attachment) => (
         <Fragment key={attachment.id}>
