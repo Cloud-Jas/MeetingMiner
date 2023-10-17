@@ -215,7 +215,7 @@ async function pushMessageToQueue(requestBody) {
       const attachment = attachments.find((attachment) => attachment.id === attachmentId);  
       if (attachment) {
         console.log(attachment);
-        const filename = projectKey+"-"+attachment.filename;
+        const filename = context.platformContext.issueKey+"-"+attachment.filename;
         selectedFileNames.push(filename);
         await uploadToAzureFunction(attachment,filename);
       }
