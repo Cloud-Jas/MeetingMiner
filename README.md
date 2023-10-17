@@ -64,7 +64,7 @@ Few key takeaways:
 
 ```json 
 {
-      "blobs": [Array_of_uploaded_filenames],
+      "blobs": ["transcript-1.txt","transcript-2.txt"],
       "webhookUrl": "FORGE_APP_WEBHOOK_URL",
       "projectKey": "PROJECT_KEY",
       "projectId": "PROJECT_ID",
