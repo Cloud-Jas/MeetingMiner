@@ -69,7 +69,7 @@ Few key takeaways:
       "projectKey": "PROJECT_KEY",
       "projectId": "PROJECT_ID",
       "currentIssueKey": "CURRENT_ISSUE_KEY"      
-};
+}
 
 ```
 <br>
