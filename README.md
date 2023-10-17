@@ -1,5 +1,19 @@
-# MeetingMiner
-MeetingMiner is a tool built for Atlassian's codegeist hackathon. It helps us in streamlining the meeting into agile actions, by taking bunch of meeting transcript as input and creates userstories based on it using Azure OpenAI
+<div id=top></div>
+<h1 align="center"><a href="https://iamdivakarkumar.com/" target="blank"><img height="240" src="https://meetingminer.iamdivakarkumar.com/images/logo.svg"/><br/></a></h1>
+
+<p aign="center">
+  <b>MeetingMiner is a tool built for Atlassian's codegeist hackathon. It helps us in streamlining the meeting into agile actions, by taking bunch of meeting transcript as input and creates userstories based on it using Azure OpenAI </b>
+</p>
+
+<p align="center">  
+
+<a href="https://developer.atlassian.com/console/install/468541e9-6987-4ecd-8471-59ed8b1a04f0?signature=715c0fb52b19fc322fd0dc3666d9e356e993a7a2b75d30eacca352a8033a2aea77398e2339e7063d6bc613bc345410401fa555983023c469b9a43b16152e1f87&product=jira">
+<img src="https://img.shields.io/badge/Install-8A2BE2" alt="MeetingMiner"/>
+</a>
+
+</p>
+<br/>
+
 ## Inspiration
 
 In the fast-paced world of software development, time is of the essence. The hours we spent in sprint planning, refinement meetings, and backlog meetings can often feel like time consuming, but necessary. It would be some times frustrating that these meetings don't cover all the critical aspects of the project and we end up in follow-up meetings to discuss more into technical aspect of it and feasibility.
